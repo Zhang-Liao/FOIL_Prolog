@@ -1,4 +1,5 @@
 loadfiles() :-
+    % [fakty_1],
     [test_coq],
     [match_arg_lists_2],
     [covers_3],

@@ -10,7 +10,11 @@ build_conseq(Pred, Conseq, NArgs) :-
 learn(Pred,  Rules):-
     elements(Elements),
     generate_pos_examples(Pred, PosExamples),
+    print('positive example\n'),
+    print(PosExamples),
     generate_neg_examples(PosExamples, Elements, 2, NegExamples),
+    print('negative example\n'),
+    print(NegExamples),
     build_conseq(Pred, Conseq, NArgs),
  % Conseq =..
 %[Pred , x, y],
