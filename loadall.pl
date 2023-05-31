@@ -1,5 +1,5 @@
 loadfiles() :-
-    [fakty_1],
+    [test_coq],
     [match_arg_lists_2],
     [covers_3],
     [build_arg_list_4],

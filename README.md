@@ -10,7 +10,7 @@
  4. Define files to compile ``` [loadall]. ```
  5. Compile ``` load(). ```
  6. Use ``` learn ``` function to learn rules. For example ``` learn(grandfather, Rule). ```
- 
+
  Note: To learn new rules, corresponding predicates must be added, as well as necessary facts. See "fakty_1" file for an example.
  # Credits
  Authors: @pashok3d, @hpolekha
