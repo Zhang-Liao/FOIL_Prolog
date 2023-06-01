@@ -10,7 +10,8 @@ covers(rule(Conseq, Anteced), Example) :-
 match_conseq(Conseq, Example, BindingsOut) :-
     Conseq =.. [_|ArgList1],
     Example =.. [_|ArgList2],
-    % print(match_conseq_exg(Example)), nl,
+    print(argList1(ArgList1)), nl,
+    print(argList2(ArgList2)), nl,
     match_arg_lists(ArgList1,ArgList2,[],BindingsOut) .
 
 match_anteced([ ], Bindings, Bindings) .

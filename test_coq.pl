@@ -23,3 +23,4 @@ length1([X|Rest], N) :-
 	length(Rest, NRest) ,
 	N is NRest + 1 .
 
+test_cover :- covers(rule(intro(v_1), [vertical(v_6,v_5),hyps_plus(v_4,v_2,v_6),hyps_plus(v_4,v_2,v_5),hyps_plus(v_1,v_2,v_3)]), pos(1)).

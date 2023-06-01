@@ -4,15 +4,15 @@ new_partial_rule(PosExamples, NegExamples, PartialRule, LastUsed,BestRule, RetLa
 
 scored_rule(PosExamples, NegExamples, PartialRule, LastUsed, rule_descr(CandPartialRule, Score, RetLastUsed)) :-
     candidate_rule(PartialRule, PosExamples, NegExamples, LastUsed, CandPartialRule, RetLastUsed),
-    % print(candPartialRule(CandPartialRule)), nl,
-    % print(posExamples(PosExamples)), nl,
-    % print(negExamples(NegExamples)), nl,
+    print(candPartialRule(CandPartialRule)), nl,
+    print(posExamples(PosExamples)), nl,
+    print(negExamples(NegExamples)), nl,
     filter(PosExamples, CandPartialRule, PosExamples1),
     filter(NegExamples, CandPartialRule, NegExamples1),
     length1(PosExamples1, NPos),
     length1(NegExamples1, NNeg),
-    % print(posExamples1(PosExamples1)), nl,
-    % print(negExamples1(NegExamples1)), nl, nl,
+    print(posExamples1(PosExamples1)), nl,
+    print(negExamples1(NegExamples1)), nl, nl,
     NPos > 0,
     Score is NPos - NNeg.
 

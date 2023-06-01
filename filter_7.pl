@@ -17,3 +17,11 @@
 filter(Examples, Rule, NoDupExg) :-
     findall(Example, (member1(Example, Examples), covers(Rule, Example)), Examples1),
     sort(Examples1, NoDupExg).
+    % print(examples1(Examples1)),nl,
+    % print(noDupExg(NoDupExg)), nl,nl, halt.
+
+% filter(Examples, Rule, Examples1) :-
+%     findall(Example, (member1(Example, Examples), covers(Rule, Example)), Examples1),
+    % sort(Examples1, NoDupExg),
+    % print(examples(Examples)), nl,
+    % print(examples1(Examples1)), nl, halt.
