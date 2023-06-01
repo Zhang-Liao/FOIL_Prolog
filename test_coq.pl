@@ -7,7 +7,7 @@ known_fact(goal_nat(2, [0])).
 known_fact(goal_plus(2, [0, 1])).
 known_fact(hyps_plus(2, a, [a, 0])).
 known_fact(hyps_plus(2, a, [a, 1])).
-known_fact(vertical(X, Y) :- X\==Y, prefix(X, Y)).
+known_fact(vertical(X, Y) :- (X\==Y), prefix(X, Y)).
 predicate(intro, 1).
 predicate(goal_nat, 2).
 predicate(goal_plus, 2).
