@@ -10,12 +10,10 @@ build_conseq(Pred, Conseq, NArgs) :-
 learn(Pred,  Rules):-
     elements(Elements),
     generate_pos_examples(Pred, PosExamples),
-    % The third argument indicate the arity of negative examples.
+    % The third argument indicates the arity of negative examples.
     generate_neg_examples(PosExamples, Elements, 1, NegExamples),
-    print('positive example'),
-    print(PosExamples),
-    print('negative example'),
-    print(NegExamples),
+    print(positive_example(PosExamples)), nl,
+    print(negative_example(NegExamples)), nl,
     build_conseq(Pred, Conseq, NArgs),
  % Conseq =..
 %[Pred , x, y],

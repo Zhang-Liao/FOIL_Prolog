@@ -1,10 +1,16 @@
 covers(rule(Conseq, Anteced), Example) :-
-     match_conseq(Conseq, Example, Bindings),
-     match_anteced(Anteced, Bindings, _ ) .
+    % rule(Conseq, Anteced) == rule(intro(v_1),[hyps_plus(v_1,v_2,v_3)]) ->
+    % print(rule(Conseq, Anteced)), nl,
+    % print(example(Example)), nl, true,
+    % match_conseq2(Conseq, Example, Bindings),
+    % match_anteced(Anteced, Bindings, _ );
+    match_conseq(Conseq, Example, Bindings),
+    match_anteced(Anteced, Bindings, _ ) .
 
 match_conseq(Conseq, Example, BindingsOut) :-
     Conseq =.. [_|ArgList1],
     Example =.. [_|ArgList2],
+    % print(match_conseq_exg(Example)), nl,
     match_arg_lists(ArgList1,ArgList2,[],BindingsOut) .
 
 match_anteced([ ], Bindings, Bindings) .

@@ -1,6 +1,6 @@
 candidate_rule(rule(Conseq, Anteced), _ , NegExamples, LastUsed,rule(Conseq, [Expr|Anteced]), RetLastUsed) :-
-	build_expr(LastUsed, Expr, RetLastUsed),Expr \= Conseq,
-	suitable(rule(Conseq, [Expr|Anteced]), NegExamples).
+	build_expr(LastUsed, Expr, RetLastUsed),Expr \= Conseq.
+	% suitable(rule(Conseq, [Expr|Anteced]), NegExamples).
 
 build_expr(LastUsed,Expr,RetLastUsed) :-
 	predicate(Pred, N),
@@ -9,11 +9,12 @@ build_expr(LastUsed,Expr,RetLastUsed) :-
 
 suitable(PartialRule, NegExamples) :-
 	member1(NegEx, NegExamples),
+	% print(partialRule_before_suit(PartialRule)), nl,
+	% print(negEx(NegEx)), nl,
 	\+covers(PartialRule, NegEx), !.
 
 member1(X,[X|_]).
-member1(X,[_|R]):-
-    member1(X,R).
+member1(X,[_|R]):- member1(X,R).
 
 
 
