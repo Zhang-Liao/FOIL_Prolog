@@ -7,7 +7,7 @@ known_fact(goal_nat(2, [0])).
 known_fact(goal_plus(2, [0, 1])).
 known_fact(hyps_plus(2, a, [a, 0])).
 known_fact(hyps_plus(2, a, [a, 1])).
-known_fact(vertical(X, Y) :- (X\==Y), prefix(X, Y)).
+known_fact(vertical(X, Y) :- (nonvar(X), nonvar(Y), dif(X, Y), prefix(X, Y))).
 predicate(intro, 1).
 predicate(goal_nat, 2).
 predicate(goal_plus, 2).
@@ -23,4 +23,4 @@ length1([X|Rest], N) :-
 	length(Rest, NRest) ,
 	N is NRest + 1 .
 
-test_cover :- covers(rule(intro(v_1), [vertical(v_6,v_5),hyps_plus(v_4,v_2,v_6),hyps_plus(v_4,v_2,v_5),hyps_plus(v_1,v_2,v_3)]), pos(1)).
+test_cover :- covers(rule(intro(v_1), [hyps_plus(v_4,v_2,v_6),hyps_plus(v_4,v_2,v_5),hyps_plus(v_1,v_2,v_3), vertical(v_6,v_5)]), pos(1)).
